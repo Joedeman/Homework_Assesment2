@@ -1,0 +1,144 @@
+<!-- <ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>workout</ion-title>
+  </ion-toolbar>
+</ion-header> -->
+
+<ion-content [fullscreen]="true">
+  <img src="assets/images/Functional Training Garage Gym.jpeg" alt="homebackground" class="home-background" />
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Workout</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <!-- Female Workouts -->
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Female</ion-card-title>
+      <ion-card-subtitle>Workout Programs</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list class="ion-list">
+        <ion-item button (click)="openWorkoutModal('Female Fat Burn')">
+          <ion-thumbnail slot="start">
+            <img src="assets/images/fatt.jpeg" />
+          </ion-thumbnail>
+          <ion-label>Fat Burn</ion-label>
+        </ion-item>
+
+        <ion-item button (click)="openWorkoutModal('Female Glutes Focus')">
+          <ion-thumbnail slot="start">
+            <img src="assets/images/WeightLose.jpeg" />
+          </ion-thumbnail>
+          <ion-label>Glutes Focus</ion-label>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+
+  <!-- Male Workouts -->
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Male</ion-card-title>
+      <ion-card-subtitle>Workout Programs</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list>
+        <ion-item button (click)="openWorkoutModal('Male Muscle Gain')">
+          <ion-thumbnail slot="start">
+            <img src="assets/images/Musclegain.jpeg" />
+          </ion-thumbnail>
+          <ion-label>Muscle Gain</ion-label>
+        </ion-item>
+
+        <ion-item button (click)="openWorkoutModal('Male Strength Builder')">
+          <ion-thumbnail slot="start">
+            <img src="assets/images/Strieght.jpeg" />
+          </ion-thumbnail>
+          <ion-label>Strength Builder</ion-label>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+
+  <h2 class="section-title">Supplements</h2>
+  <ion-list>
+    <ion-item>
+      <ion-label>Whey Protein</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label>Creatine Monohydrate</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label>Branched-Chain Amino Acids (BCAAs)</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label>Omega-3 Fish Oil</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label>Multivitamins</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label>Pre-Workout (Caffeine + Nitric Oxide Boosters)</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label>Vitamin D3</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label>Magnesium</ion-label>
+    </ion-item>
+  </ion-list>
+
+<h2 class="section-title">Nutritions</h2>
+<ion-list>
+  <ion-item>
+    <ion-label>Oats</ion-label>
+  </ion-item>
+  <ion-item>
+    <ion-label>Brown Rice</ion-label>
+  </ion-item>
+  <ion-item>
+    <ion-label>Eggs</ion-label>
+  </ion-item>
+  <ion-item>
+    <ion-label>Chicken Breast</ion-label>
+  </ion-item>
+  <ion-item>
+    <ion-label>Sweet Potatoes</ion-label>
+  </ion-item>
+  <ion-item>
+    <ion-label>Greek Yogurt</ion-label>
+  </ion-item>
+  <ion-item>
+    <ion-label>Leafy Greens (Spinach, Kale)</ion-label>
+  </ion-item>
+  <ion-item>
+    <ion-label>Almonds</ion-label>
+  </ion-item>
+</ion-list>
+  <!-- Workout Modal -->
+  <ion-modal [isOpen]="isModalOpen" (didDismiss)="closeModal()">
+    <ng-template>
+      <ion-header translucent>
+        <ion-toolbar>
+          <ion-title>{{ selectedWorkout }}</ion-title>
+          <ion-buttons slot="end">
+            <ion-button (click)="closeModal()">Close</ion-button>
+          </ion-buttons>
+        </ion-toolbar>
+      </ion-header>
+
+      <ion-content class="ion-padding">
+        <h2>Exercises</h2>
+        <ion-list>
+          <ion-item *ngFor="let exercise of workoutDetails[selectedWorkout]">
+            <ion-label>{{ exercise }}</ion-label>
+            <ion-checkbox slot="end" [(ngModel)]="completedExercises[exercise]"></ion-checkbox>
+          </ion-item>
+        </ion-list>
+      </ion-content>
+    </ng-template>
+  </ion-modal>
+
+</ion-content>

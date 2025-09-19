@@ -1,0 +1,51 @@
+<ion-header [translucent]="true">
+  <ion-toolbar class="login-header-toolbar">
+    <div class="title">
+      <ion-thumbnail slot="start" class="logo-img">
+        <img alt="App Logo" src="assets/images/ChatGPT Image Apr 15, 2025, 01_12_03 PM.png" />
+      </ion-thumbnail>
+      <h1 class="app-name"><span class="get">Get</span><span class="fit">Fit</span></h1>
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content [fullscreen]="true" class="ion-padding login-page">
+
+  <!-- Background image -->
+  <img src="assets/images/login.png" alt="login background" class="login-background" />
+
+  <ion-grid>
+    <ion-row class="ion-justify-content-center">
+      <ion-col size="12" size-md="8" size-lg="6">
+        <!-- Login container -->
+        <div class="login-container">
+          <h2 class="login-title">Login</h2>
+
+          <form [formGroup]="loginForm" (ngSubmit)="login()">
+            <ion-item class="custom-item">
+              <ion-label position="floating">Email</ion-label>
+              <ion-input type="email" formControlName="email"></ion-input>
+            </ion-item>
+
+            <ion-item class="custom-item">
+              <ion-label position="floating">Password</ion-label>
+              <ion-input type="password" formControlName="password"></ion-input>
+            </ion-item>
+
+            <div class="button-container">
+              <ion-button expand="full" type="submit"  [disabled]="!loginForm.valid" class="login-button ion-margin-top">
+                Login
+              </ion-button>                          
+            </div>
+            <div class="register-link">
+              <p>Don't have an account? <ion-button  fill="clear" (click)="goToRegister()">
+               Register here
+              </ion-button></p>
+            </div>
+          </form>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

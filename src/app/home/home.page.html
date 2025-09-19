@@ -1,0 +1,44 @@
+<ion-content [fullscreen]="true" class="ion-padding home-page">
+  <img src="assets/images/Functional Training Garage Gym.jpeg" alt="homebackground" class="home-background" />
+
+  <!-- Hero Image -->
+  <div class="greeting-section">
+    <img src="assets/images/home2.jpeg" alt="Hero" class="hero-img" />
+  </div>
+
+  <!-- Text Below Hero -->
+  <div class="hero-text">
+    <h1>Hi, Admin</h1>
+    <p>Fitness is not a destination, it's a way of life.</p>
+  </div>
+
+  <!-- Workouts Section -->
+  <h2 class="section-title">Workouts</h2>
+  <div class="card-scroll">
+    <ion-card class="workout-card">
+      <img src="assets/images/Musclegain.jpeg" />
+      <div class="card-text" [routerLink]="['/tabs/workout']">Muscle Gain</div>
+    </ion-card>
+    <ion-card class="workout-card">
+      <img src="assets/images/WeightLose.jpeg" />
+      <div class="card-text" [routerLink]="['/tabs/workout']">Weight Loss</div>
+    </ion-card>
+    <ion-card class="workout-card">
+      <img src="assets/images/Strieght.jpeg" />
+      <div class="card-text" [routerLink]="['/tabs/workout']">Strength Training</div>
+    </ion-card>
+  </div>
+
+  <!-- Supplements Section -->
+  <h2 class="section-title">Supplements</h2>
+  <div class="supplements-grid">
+    <ion-card class="supplement-card">
+      <img src="assets/images/Supplements.jpeg" />
+      <div class="card-text" [routerLink]="['/tabs/workout']">Creatine</div>
+    </ion-card>
+    <ion-card class="supplement-card">
+      <img src="assets/images/food.jpeg" />
+      <div class="card-text" [routerLink]="['/tabs/workout']">Protein</div>
+    </ion-card>
+  </div>
+</ion-content>

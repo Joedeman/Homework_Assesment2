@@ -1,0 +1,49 @@
+<ion-header [translucent]="true">
+  <ion-toolbar class="login-header-toolbar">
+    <div class="title">
+      <ion-thumbnail slot="start" class="logo-img">
+        <img alt="App Logo" src="assets/images/ChatGPT Image Apr 15, 2025, 01_12_03 PM.png" />
+      </ion-thumbnail>
+      <h1 class="app-name"><span class="get">Get</span><span class="fit">Fit</span></h1>
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="login-page">
+  <!-- Background image -->
+  <img src="assets/images/login.png" alt="signup background" class="login-background" />
+
+  <div class="login-container">
+    <div class="login-title"><span>Sign Up</span></div>
+
+    <form (submit)="onSignup()">
+      <ion-item class="custom-item">
+        <ion-label position="floating">Name</ion-label>
+        <ion-input type="text" [(ngModel)]="name" name="name"></ion-input>
+      </ion-item>
+
+      <ion-item class="custom-item">
+        <ion-label position="floating">Email</ion-label>
+        <ion-input type="email" [(ngModel)]="email" name="email" required></ion-input>
+      </ion-item>
+
+      <ion-item class="custom-item">
+        <ion-label position="floating">Password</ion-label>
+        <ion-input type="password" [(ngModel)]="password" name="password" required></ion-input>
+      </ion-item>
+
+      <ion-item class="custom-item">
+        <ion-label position="floating">Confirm Password</ion-label>
+        <ion-input type="password" [(ngModel)]="confirmPassword" name="confirmPassword" required></ion-input>
+      </ion-item>
+
+      <ion-button expand="block" type="submit" class="login-button ion-margin-top">
+        Sign Up
+      </ion-button>
+
+      <ion-button expand="block" fill="clear" routerLink="/login">
+        Already have an account? Log in
+      </ion-button>
+    </form>
+  </div>
+</ion-content>

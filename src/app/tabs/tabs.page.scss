@@ -1,0 +1,14 @@
+/* Remove red header */
+/* Remove the black header background */
+.home-header-toolbar {
+  --background: transparent;
+  color: inherit;
+  box-shadow: none;
+}
+
+/* Red tab bar with blue icons and white selected */
+ion-tab-bar.custom-tab-bar {
+  --background: #f7f7f7;
+  --color: #000000;
+  --color-selected: #da0f0f;
+}
